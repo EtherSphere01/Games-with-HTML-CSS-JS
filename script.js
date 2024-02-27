@@ -113,9 +113,11 @@ boxes.forEach((box) => {
     if (turnO === true) {
       box.innerText = "O";
       turnO = false;
+      winner.innerText = "Player 'X'";
     } else {
       box.innerText = "X";
       turnO = true;
+      winner.innerText = "Player 'O'";
     }
     box.disabled = true;
     checkWinner();
@@ -133,7 +135,7 @@ const checkWinner = () => {
 
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val === pos2Val && pos2Val === pos3Val) {
-        winner.innerText = `Winner = ${pos1Val}`;
+        winner.innerText = `Winner = '${pos1Val}'`;
         boxes[pattern[0]].style.backgroundColor = "gray";
         boxes[pattern[1]].style.backgroundColor = "gray";
         boxes[pattern[2]].style.backgroundColor = "gray";
@@ -165,4 +167,5 @@ reset2.addEventListener("click", () => {
     box.disabled = false;
     turnO = true;
   });
+  winner.innerText = "Player 'O'";
 });
