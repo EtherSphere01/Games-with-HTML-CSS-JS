@@ -7,53 +7,78 @@
     <title>Games</title>
   </head>
   <body>
-    <h1>Rock Paper Scissors</h1>
-    <div class="choices">
-      <div class="choice" id="rock">
-        <img src="./images/rock.png" />
+    <!-- Rock Paper Scissors -->
+    <div>
+      <h1>Rock Paper Scissors</h1>
+      <div class="choices">
+        <div class="choice" id="rock">
+          <img src="./images/rock.png" />
+        </div>
+
+        <div class="choice" id="paper">
+          <img src="./images/paper.png" />
+        </div>
+
+        <div class="choice" id="scissors">
+          <img src="./images/scissors.png" />
+        </div>
       </div>
 
-      <div class="choice" id="paper">
-        <img src="./images/paper.png" />
+      <div class="score-board">
+        <div class="score">
+          <p id="user-score">0</p>
+          <p>You</p>
+        </div>
+
+        <div class="score">
+          <p id="comp-score">0</p>
+          <p>Computer</p>
+        </div>
+
+        <div class="score">
+          <p id="draw">0</p>
+          <p>Draw</p>
+        </div>
       </div>
 
-      <div class="choice" id="scissors">
-        <img src="./images/scissors.png" />
+      <div class="display-choices">
+        <div class="pc-choice">
+          <img class="p-change" src="./images/user.png" />
+          <p>Your choice</p>
+        </div>
+
+        <div class="pc-choice">
+          <img class="c-change" src="./images/computer.png" />
+          <p>Computer choice</p>
+        </div>
+      </div>
+
+      <div class="msg-container">
+        <p id="msg">Play your move</p>
+        <div class="reset">Reset</div>
       </div>
     </div>
 
-    <div class="score-board">
-      <div class="score">
-        <p id="user-score">0</p>
-        <p>You</p>
+    <!-- Tic Tac Toe -->
+    <div class="tic-tac-toe">
+      <h1 class="tic">Tic Tac Toe</h1>
+      <div class="container">
+        <div class="game">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
       </div>
-
-      <div class="score">
-        <p id="comp-score">0</p>
-        <p>Computer</p>
+      <div class="msg-container2">
+        <div class="winner"><p class="msg2">Winner</p></div>
+        <div class="reset2"><p>Reset</p></div>
       </div>
-
-      <div class="score">
-        <p id="draw">0</p>
-        <p>Draw</p>
-      </div>
-    </div>
-
-    <div class="display-choices">
-      <div class="pc-choice">
-        <img class="p-change" src="./images/user.png" />
-        <p>Your choice</p>
-      </div>
-
-      <div class="pc-choice">
-        <img class="c-change" src="./images/computer.png"/>
-        <p>Computer choice</p>
-      </div>
-    </div>
-
-    <div class="msg-container">
-      <p id="msg">Play your move</p>
-      <div class="reset">Reset</div>
     </div>
 
     <script src="script.js"></script>

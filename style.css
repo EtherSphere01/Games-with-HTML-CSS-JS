@@ -1,3 +1,4 @@
+/* Rock Paper Scissors */
 * {
   margin: 0;
   padding: 0;
@@ -116,6 +117,75 @@ h1 {
   font-size: 1.5vw;
 }
 
-.reset:hover {
+.reset,
+.reset2,
+.box:hover {
   cursor: pointer;
+}
+
+/* Tic Tac Toe */
+
+.tic {
+  margin-top: 5vw;
+}
+
+.tic-tac-toe {
+  margin-bottom: 5vw;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game {
+  height: 58vmin;
+  width: 62vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2vmin;
+}
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.8);
+  font-size: 8vmin;
+  color: #b0413e;
+}
+
+.msg-container2 {
+  /* background-color: #191913; */
+  color: black;
+  border-radius: 1rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  height: 3vw;
+}
+
+.reset2 {
+  background-color: #791c38;
+  color: white;
+  height: 2vw;
+  font-size: 2vw;
+  display: inline;
+  border-radius: 0.9rem;
+  padding: 0.8rem;
+}
+
+.msg2 {
+  background-color: #191913;
+  color: white;
+  height: 2vw;
+  font-size: 2vw;
+  display: inline;
+  border-radius: 0.9rem;
+  padding: 0.8rem;
 }

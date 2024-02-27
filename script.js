@@ -1,3 +1,5 @@
+// Rock Paper Scissors
+
 let userScore = 0;
 let compScore = 0;
 let draw = 0;
@@ -86,4 +88,81 @@ reset.addEventListener("click", () => {
 
   userImageChange.src = "./images/user.png";
   compImageChange.src = "./images/computer.png";
+});
+
+// Tic Tac Toe
+
+let boxes = document.querySelectorAll(".box");
+let reset2 = document.querySelector(".reset2");
+let winner = document.querySelector(".msg2");
+let turnO = true;
+
+const winPatterns = [
+  [0, 1, 2],
+  [0, 3, 6],
+  [0, 4, 8],
+  [1, 4, 7],
+  [2, 5, 8],
+  [2, 4, 6],
+  [3, 4, 5],
+  [6, 7, 8],
+];
+
+boxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    if (turnO === true) {
+      box.innerText = "O";
+      turnO = false;
+    } else {
+      box.innerText = "X";
+      turnO = true;
+    }
+    box.disabled = true;
+    checkWinner();
+  });
+});
+
+let count = 0;
+
+const checkWinner = () => {
+  count++;
+  for (let pattern of winPatterns) {
+    let pos1Val = boxes[pattern[0]].innerText;
+    let pos2Val = boxes[pattern[1]].innerText;
+    let pos3Val = boxes[pattern[2]].innerText;
+
+    if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
+      if (pos1Val === pos2Val && pos2Val === pos3Val) {
+        winner.innerText = `Winner = ${pos1Val}`;
+        boxes[pattern[0]].style.backgroundColor = "gray";
+        boxes[pattern[1]].style.backgroundColor = "gray";
+        boxes[pattern[2]].style.backgroundColor = "gray";
+
+        boxes[pattern[0]].style.color = "white";
+        boxes[pattern[1]].style.color = "white";
+        boxes[pattern[2]].style.color = "white";
+
+        boxes.forEach((box) => {
+          box.disabled = true;
+        });
+      } else if (count === 9) {
+        winner.innerText = `Draw`;
+        boxes.forEach((box) => {
+          box.disabled = true;
+          box.style.backgroundColor = "gray";
+          box.style.color = "white";
+        });
+      }
+    }
+  }
+};
+
+reset2.addEventListener("click", () => {
+  boxes.forEach((box) => {
+    box.style.backgroundColor = "white";
+    box.style.color = "#b0413e";
+    box.innerText = "";
+    box.disabled = false;
+    turnO = true;
+  });
 });
