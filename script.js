@@ -149,6 +149,7 @@ const checkWinner = () => {
         });
       } else if (count === 9) {
         winner.innerText = `Draw`;
+        count = 0;
         boxes.forEach((box) => {
           box.disabled = true;
           box.style.backgroundColor = "gray";
@@ -168,4 +169,5 @@ reset2.addEventListener("click", () => {
     turnO = true;
   });
   winner.innerText = "Player 'O'";
+  count = 0;
 });
