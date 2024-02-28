@@ -147,6 +147,7 @@ const checkWinner = () => {
         boxes.forEach((box) => {
           box.disabled = true;
         });
+        break;
       } else if (count === 9) {
         winner.innerText = `Draw`;
         count = 0;
